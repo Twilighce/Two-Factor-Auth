@@ -238,7 +238,6 @@ define([
 						storage.setItem("USER_VERIFIED",1,"session");
 
 					} else {
-						//_this.displayError(i18n.get('stubconnect.commonText.verifyfailure'), 'twofa-error');
 						console.log("verify error");
 						verifyError = 'error-Code';
 						storage.setItem("USER_VERIFIED",0,"session");
