@@ -1,0 +1,43 @@
+<div>
+<fieldset>
+    
+    {?emailExists}
+        <div id = "sent-info">The verification code has been successfully sent. 
+        <br clear="none">
+        Please check your mailbox.</div>
+    {:else}
+
+        <div class="verify-title">Email</div> 
+
+        <div id = "email-box">
+      
+            <input class="input-box" type="email" name="email" id="email"/>  
+
+            <div class="error-box"></div>        
+
+            <button type="submit" class="save-btn" id="save" data-title="Save and send"/}">Save and send</button>
+ 
+        </div>
+
+    {/emailExists}
+
+
+    <div class="verify-title">Verification Code</div>
+
+
+    <div id ="verifyBox">
+
+        <input class="input-box" type="text" name="inputCode" id="inputCode"/>
+
+        <div class="error-box"></div>
+
+        <button type="submit" class="verify-btn" id="verify" data-title="Verify">Verify</button>
+
+        <button type="submit" class="resend-btn" id="resend" data-title="Resend">Resend</button>
+
+
+    </div>   
+
+</fieldset>
+
+</div>
