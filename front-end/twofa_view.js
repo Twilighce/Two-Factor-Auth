@@ -120,7 +120,7 @@ define([
 		// call update user api
 		saveEmail: function(email) {
 			
-			var session_id = storage.getItem("STUB_CONNECT", "session");
+			var session_id = storage.getItem("session", "session");
 			var userdata = storage.getItem("userData", "session");
 			var userName = userdata.name.loginName;
 			var firstName = userdata.name.firstName;
@@ -169,7 +169,7 @@ define([
 
 
 		sendEmail: function() {
-			var sessionid = storage.getItem("STUB_CONNECT", "session");
+			var sessionid = storage.getItem("sessionid", "session");
 			var userdata = storage.getItem("userData", "session");
 			var userName = userdata.name.loginName;
 			var firstName = userdata.name.firstName;
@@ -219,7 +219,7 @@ define([
 			var inputCode=this.$el.find('#inputCode').val().trim();
 			var code_filter = /[a-zA-Z0-9]{6}/;			
 			
-			var session_id = storage.getItem("STUB_CONNECT", "session");		
+			var session_id = storage.getItem("sessionid", "session");		
 			var verifydata = {
 							inputCode: inputCode
 							};
@@ -262,7 +262,7 @@ define([
 			switch(error) {
 				case 'error-email':
 					this.uiEl.$email.addClass('error');
-					this.uiEl.$email.next().append(i18n.get('stubconnect.scripts.views.twofaView.error.email')).removeClass('hidden');
+					this.uiEl.$email.next().append(i18n.get('views.twofaView.error.email')).removeClass('hidden');
 					break;
 				case 'error-Code':
 					this.uiEl.$inputCode.addClass('error');
