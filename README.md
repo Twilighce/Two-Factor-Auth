@@ -13,4 +13,4 @@
 
 - 若该用户未保存过邮箱，先提示用户保存邮箱，保存后发送验证码邮件，最后填写验证码完成注册：
 
-![TwoFA_1](http://oimbmvqt3.bkt.clouddn.com/TWOFA_1.PNG)
+![Twofa2](http://oimbmvqt3.bkt.clouddn.com/TWOFA_1.PNG)
