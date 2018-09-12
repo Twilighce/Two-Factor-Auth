@@ -41,7 +41,7 @@ define([
 		// email exists or not 
 		selectTmpl: function() {
 			var userdata = storage.getItem("userData", "session");
-			var session_id=storage.getItem("STUB_CONNECT","session"); 
+			var session_id=storage.getItem("xxx","session"); 
 			var modeldata;
 
 			if (!session_id) {
@@ -120,7 +120,7 @@ define([
 		// call update user api
 		saveEmail: function(email) {
 			
-			var session_id = storage.getItem("STUB_CONNECT", "session");
+			var session_id = storage.getItem("xxx", "session");
 			var userdata = storage.getItem("userData", "session");
 			var userName = userdata.name.loginName;
 			var firstName = userdata.name.firstName;
@@ -149,7 +149,7 @@ define([
 					if(response.response_code == 200) {
 						//						
 						console.log("successfully sent");
-						_this.publishEvent('headerEventHandler:showSuccess', i18n.get('stubconnect.scripts.views.twofaView.sendSuccess.message'));
+						_this.publishEvent('headerEventHandler:showSuccess', i18n.get('xxx.scripts.views.twofaView.sendSuccess.message'));
 					}
 					else{
 						//
@@ -169,7 +169,7 @@ define([
 
 
 		sendEmail: function() {
-			var sessionid = storage.getItem("STUB_CONNECT", "session");
+			var sessionid = storage.getItem(xxx", "session");
 			var userdata = storage.getItem("userData", "session");
 			var userName = userdata.name.loginName;
 			var firstName = userdata.name.firstName;
@@ -193,16 +193,15 @@ define([
 				.done(function(response){
 					if(response.response_code == 200) {
 						console.log("successfully sent");
-						_this.publishEvent('headerEventHandler:showSuccess', i18n.get('stubconnect.scripts.views.twofaView.sendSuccess.message'));
 					}
 					else {
-						_this.publishEvent('headerEventHandler:showError', i18n.get('stubconnect.scripts.views.twofaView.sendError.message'));
+						_this.publishEvent('headerEventHandler:showError', i18n.get('xxx.scripts.views.twofaView.sendError.message'));
 						console.log("sent error");
 						_this.enableSend();
 					}
 				})
 				.fail(function(){
-					_this.publishEvent('headerEventHandler:showError', i18n.get('stubconnect.scripts.views.twofaView.sendError.message'));
+					_this.publishEvent('headerEventHandler:showError', i18n.get('xxx.scripts.views.twofaView.sendError.message'));
 					console.log("sent fail");
 					_this.enableSend();
 				});
@@ -219,7 +218,7 @@ define([
 			var inputCode=this.$el.find('#inputCode').val().trim();
 			var code_filter = /[a-zA-Z0-9]{6}/;			
 			
-			var session_id = storage.getItem("STUB_CONNECT", "session");		
+			var session_id = storage.getItem("xxx", "session");		
 			var verifydata = {
 							inputCode: inputCode
 							};
@@ -238,12 +237,12 @@ define([
 						storage.setItem("USER_VERIFIED",1,"session");
 
 					} else {
-						//_this.displayError(i18n.get('stubconnect.commonText.verifyfailure'), 'twofa-error');
+						//_this.displayError(i18n.get('xxx.commonText.verifyfailure'), 'twofa-error');
 						console.log("verify error");
 						verifyError = 'error-Code';
 						storage.setItem("USER_VERIFIED",0,"session");
 						//_this.processError(verifyError);
-						_this.publishEvent('headerEventHandler:showError', i18n.get('stubconnect.scripts.views.twofaView.verifyError.message'));
+						_this.publishEvent('headerEventHandler:showError', i18n.get('xxx.scripts.views.twofaView.verifyError.message'));
 						_this.enableSend();
 					}
 				})
@@ -251,25 +250,27 @@ define([
 					verifyError = 'error-default';
 					console.log("verify fail");
 					storage.setItem("USER_VERIFIED",0,"session");
-					_this.publishEvent('headerEventHandler:showError', i18n.get('stubconnect.scripts.views.twofaView.verifyError.message'));
+					_this.publishEvent('headerEventHandler:showError', i18n.get('xxx.scripts.views.twofaView.verifyError.message'));
 					_this.enableSend();
 				});
 			}
 		},
 
+		
+		
 		processError: function(error) {
 
 			switch(error) {
 				case 'error-email':
 					this.uiEl.$email.addClass('error');
-					this.uiEl.$email.next().append(i18n.get('stubconnect.scripts.views.twofaView.error.email')).removeClass('hidden');
+					this.uiEl.$email.next().append(i18n.get('xxx.scripts.views.twofaView.error.email')).removeClass('hidden');
 					break;
 				case 'error-Code':
 					this.uiEl.$inputCode.addClass('error');
-					this.uiEl.$inputCode.next().append(i18n.get('stubconnect.scripts.views.twofaView.error.code')).removeClass('hidden');
+					this.uiEl.$inputCode.next().append(i18n.get('xxxt.scripts.views.twofaView.error.code')).removeClass('hidden');
 					break;
 				case 'error-default':
-					this.uiEl.$inputCode.next().append(i18n.get('stubconnect.scripts.views.twofaView.error.default')).removeClass('hidden');
+					this.uiEl.$inputCode.next().append(i18n.get('xxx.scripts.views.twofaView.error.default')).removeClass('hidden');
 					break;
 				default:
 			}
