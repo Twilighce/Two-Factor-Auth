@@ -127,7 +127,7 @@ public class MailUtil implements Callable<Boolean>{
 		    // receiver
 		    message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 		    // 
-		    message.setSubject("Stubconnect Verification Code");
+		    message.setSubject("Verification Code");
 		    String content = "<html><head></head><body><h2>The verification code is: " + code +"</h2></body></html>";
 
 		    message.setContent(content, "text/html;charset=UTF-8");
