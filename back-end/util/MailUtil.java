@@ -93,7 +93,7 @@ public class MailUtil implements Callable<Boolean>{
 				flag = false;
 				//continue;
 				//Date date = new Date();
-				//logger.info("Domain=Stubconnect method=sendEmail message=send email failed at {}", date.toString());
+		
 
 			}
 
@@ -123,7 +123,7 @@ public class MailUtil implements Callable<Boolean>{
 		    // create a message		    
 		    Message message = new MimeMessage(session);
 		    // sendor
-		    message.setFrom(new InternetAddress("stubhubconnect@gmail.com"));
+		    message.setFrom(new InternetAddress("xxx@gmail.com"));
 		    // receiver
 		    message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 		    // 
@@ -143,7 +143,7 @@ public class MailUtil implements Callable<Boolean>{
 			e.printStackTrace();
 			flag = false;
 			//Date date = new Date();
-			//logger.info("Domain=Stubconnect method=sendEmail message=send email failed at {}", date.toString());
+	
 
 		}
 */
