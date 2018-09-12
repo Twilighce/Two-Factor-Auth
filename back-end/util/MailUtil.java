@@ -6,7 +6,6 @@ import java.util.Properties;
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.stubhub.domain.stubconnect.common.util.DateUtil;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
